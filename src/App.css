@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Ndot';
+  src: url('./assets/fonts/Ndot.ttf') format('truetype');
+}
+:root{
+  --pd:20px;
+  --textColor:#f6df5e;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body{
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+.initailLoadScreen{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.842);
+  backdrop-filter: blur(9.1px);
+  -webkit-backdrop-filter: blur(9.1px);
+}
+.initailLoadScreen h1{
+  color: var(--textColor);
+  font-family: 'Ndot', sans-serif;
+  font-size: 4rem;
+}
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+  background-color: #000;
+  position: relative;
+}
+.testing{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100dvh;
+}
+.testing img{
+  width: 220%;
+  transform: translateX(-30%);
+  height: 95%;
+  object-fit: cover;
+  filter: blur(40px);
+}
