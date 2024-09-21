@@ -2,9 +2,18 @@
   font-family: 'Ndot';
   src: url('./assets/fonts/Ndot.ttf') format('truetype');
 }
+@font-face {
+  font-family:'Future' ;
+  src: url('./assets/fonts/kleemaxdemo.ttf');
+}
+@font-face {
+  font-family: 'divlit';
+  src: url('./assets/fonts/divlit.ttf');
+}
 :root{
   --pd:20px;
   --textColor:#f6df5e;
+  --bgColor: #1d1e22;
 }
 *{
   margin: 0;
@@ -19,6 +28,7 @@
   align-items: center;
   position: relative;
   overflow-x: hidden;
+  background-color: var(--bgColor); 
 }
 .initailLoadScreen{
   width: 100%;
@@ -50,24 +60,145 @@
 }
 .main{
   width: 100%;
-  height: 100vh;
+  height: 400dvh;
   display: flex;
-  justify-content: flex-start;
-  align-items:flex-start;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: var(--bgColor);
+  /* transition: all 1.5s ease-in-out; */
+}
+.container{
+  display: flex;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  height: 100dvh;
+
+}
+.containerChild{
   background-color: #000;
   position: relative;
+  width: 98%;
+  height: 95%;
+  border-radius: 15px;
+  overflow: hidden;
+
 }
 .testing{
   position: absolute;
   top: 0;
   width: 100%;
   height: 100dvh;
-
+  transition: transform 1.5s ease-in-out;
+  overflow: hidden;
 }
 .testing img{
-  width: 220%;
-  transform: translateX(-30%);
-  height: 95%;
+  width: 320%;
+  height: 100%;
   object-fit: cover;
-  filter: blur(40px);
+  transition: transform 1.5s ease-in-out, filter 1.5s ease-in-out;
+  filter: blur(20px);
+  position: absolute;
+  top: 0;
+  right: -120%;
+}
+.testing.rotate img{
+  transform: rotate(90deg);
+  right: -105%;
+  top: -60%;
+  height: 300%;
+  filter: blur(0);
+  transform: rotate(90deg);
+  transition:0.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+.sideView{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3.5%;
+  height: 60%;
+  position: absolute;
+  top: 5%;
+  left: -3.5%;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.534);
+  align-items: center;
+  transition: all 1s ease-in-out;
+  transition-delay:1.5s ;
+}
+.sideviewVisible{
+  left: 2.5%;
+}
+.explore{
+  width: 80%;
+  height: 40%;
+  margin-top: 5px;
+  background-color: var(--textColor);
+  font-family: 'divlit', sans-serif;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.explore h1{
+  transform: rotate(90deg);
+  font-size: 28px;
+  letter-spacing: 1.2px;
+  font-weight: 300;
+
+}
+.sideViewImageContainer{
+  width: 80%;
+  height: 30%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.sideViewImageContent{
+  width: 100%;
+  height: 35%;
+  border-radius: 50%;
+  background:url('./assets/images/sideViewImage.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: 0px -5px;
+  transform: rotate(-90deg);
+  position: relative;
+}
+.sideViewImageContent::after{
+  position: absolute;
+  content: '+';
+  background-color: var(--textColor);
+  font-family: 'divlit', sans-serif;
+
+  top: 40%;
+  left: 80%;
+  width: 40%;
+  height: 35%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+
+}
+.sideViewImageContainer p{
+  transform: rotate(-90deg);
+  transform-origin: center;
+  font-family: 'divlit', sans-serif;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: white;
+  letter-spacing: 1.2px;
+  margin-bottom: 15px;
 }
